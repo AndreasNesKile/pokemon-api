@@ -13,8 +13,15 @@ export class PokemonService {
   constructor(public httpClient: HttpClient) {}
 
   sendGetRequest() {
-    this.httpClient.get(API_URL).subscribe(res => {
-      this.pokemons.push(res);
+    this.httpClient.get(API_URL).subscribe((pokemon: any) => {
+      console.log(pokemon);
+      this.httpClient
+        .get(`https://pokeapi.co/api/v2/pokemon/${this.numberOfPokemons}`)
+        .subscribe((secondRes: any) => {
+          // console.log(pokemon);
+          console.log(secondRes);
+        });
+      // this.pokemons.push(res.results);
     });
   }
 }

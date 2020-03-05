@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-pokemon-list-item',
-  templateUrl: './pokemon-list-item.component.html',
-  styleUrls: ['./pokemon-list-item.component.scss']
+  selector: "app-pokemon-list-item",
+  templateUrl: "./pokemon-list-item.component.html",
+  styleUrls: ["./pokemon-list-item.component.scss"]
 })
 export class PokemonListItemComponent implements OnInit {
+  @Input() pokemon: any;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
